@@ -36,14 +36,18 @@
 ////////// PROBLEM 1 //////////
 
 /*
-  Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
+  Inside the function showValues, write a for in loop that concatenates each of the property values and 
+  returns the concatenated string.
 */
 
 function showValues( obj ) {
   //Code Here
+  let str = '' 
+  for(let val in obj){
+  str += obj[val] 
 }
-
-
+return str
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -54,7 +58,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const greaterThan10 = (obj) => {
+  for(let i in obj){
+    if(obj[i] > 10){
+      obj[i] = 0
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +77,12 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const double = (obj) => {
+  for(let i in obj){
+    obj[i] *= 2
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -80,7 +96,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const secrets = (obj) => {
+  let str = ''
+  for(let i in obj){
+    if(i.startsWith('sh')){
+      str += obj[i]
+    }
+  }
+  return str
+}
 
 
 /* 
@@ -111,6 +135,10 @@ function showValues( obj ) {
 */
 
 //Code Here
+const removePassword = (obj) => {
+  delete obj.password
+  return obj
+}
 
 
 
@@ -130,6 +158,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+for(let i in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[i] > 100){
+    delete deleteTheBigNumbers[i]
+  }
+}
 
 
 
@@ -143,7 +176,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+const startsWithK= (obj) => {
+  for(let j in obj){
+    if(j.startsWith('k')){
+      delete obj[j]
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -158,5 +198,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
-
+const hiddenTreasure = (obj) => {
+  for(let i in obj){
+    if(!obj[i].includes('treasure')) {
+      delete(obj[i])
+    }
+  }
+  return obj
+}

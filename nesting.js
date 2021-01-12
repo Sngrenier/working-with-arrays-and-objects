@@ -51,7 +51,16 @@ var employees = [
 */
 
 //Code Here
-
+const employeeUpdater = () =>{
+  for(let i in employees){
+    if(employees[i].firstName === 'Theo'){
+      delete employees[i]
+    }else if(employees[i].firstName === 'Lorie'){
+      employees[i].department = 'HR'
+    }
+  }
+return employees
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -69,8 +78,20 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+//function removeDuplicates = () => [...new Set(workplaceAccidents)]
 
+// const removeDuplicates = () => {
+//   for(let i = 0; i < workplaceAccidents.length; i++){
+//     for (let j = workplaceAccidents.legnth - 1; j > i; j--){
+//       if (workplaceAccidents[i] === workplaceAccidents[j]){
+//         workplaceAccidents.splice(j, 1)
+//       }
+//     }
+//   }
+//   return workplaceAccidents
+// }
 
+const removeDuplicates = () => [...new Set(workplaceAccidents)]
 
 ////////// PROBLEM 3 //////////
 
@@ -97,8 +118,9 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
+
 
 
 
@@ -139,7 +161,15 @@ var myCar = {
 */
 
 //Code Here
+let recordCleaner = () => {
+  myCar.accidents.map(function(accident){
+    accident.atFaultForAccident = false
+  })
+} 
 
+  //you need to assign accidents to the map, so in order to do that include the myCar.accidents= to the 
+    //map function
+    //single = for equal and === in order to compare
 
 
 ////////// PROBLEM 5 //////////
@@ -158,5 +188,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+let looper = () => {
+  for(let i = 0; i < numsArr.length; i++){
+  for(let k = 0; k < numsArr[i].length; k++){
+    if(numsArr[i][k] % 2 === 0){
+      numsArr[i][k] = 'even'
+    }else {
+      numsArr[i][k] = 'odd'
+    }
+   }
+  }
+  return numsArr
+}
 
+// let looper = () => numsArr.map(nums => nums.map(num => num % 2===0 ? 'even':'odd))
 
