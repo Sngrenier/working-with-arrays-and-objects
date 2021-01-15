@@ -166,11 +166,17 @@ let recordCleaner = () => {
     accident.atFaultForAccident = false
   })
 } 
-
   //you need to assign accidents to the map, so in order to do that include the myCar.accidents= to the 
     //map function
     //single = for equal and === in order to compare
 
+// const recordCleaner = () => {
+//   for(let i = 0; i<myCar.accidents.length; i++){
+//     myCar.accidents[i].atFaultForAccident = false
+//   }
+// }
+// recordCleaner()
+// console.log(myCar)
 
 ////////// PROBLEM 5 //////////
 

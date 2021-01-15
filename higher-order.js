@@ -100,6 +100,11 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 //Code Here
 let myStrongest = monstersInYourPocket.filter(monster=>monster.CP>200)
 
+//The line above is the cleaner/abbreviated version of the code below:
+// let myStrongest = monstersInYourPocket.filter((element, index, array) => {
+//   return element.CP > 200
+// })
+
 // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
 
@@ -147,7 +152,7 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 let bobsTotal = purchases.reduce(
   function(acc, curr){
     //if the owner is bob, add the price to acc
-    //acc is the running total(accumulated total), curr is the object that we're looping over from the array
+    //acc is the runniyesng total(accumulated total), curr is the object that we're looping over from the array
     //person is the curr and the price is the acc in this situation
     if(curr.owner === 'Bob'){
       return acc + curr.price
@@ -157,4 +162,25 @@ let bobsTotal = purchases.reduce(
   },0
 )
 
+//To go through every step of the question. 
+// let bobTotal = purchases
+// .filter((element, index, array) => {
+//   return element.owner === 'Bob'
+// })
+// .map((element, index, array) => {
+//   return element.price
+// })
+// .reduce((acc, element, index, array) => {
+//   return acc + element
+// },0)
 
+
+//NOTES:
+//     const bobsTotal = purchaes.reduce((acc, element),0)
+// Then you include the arrow function at the end of the element ()
+//     const bobsTotal = purchases.reduce((acc, element) => {} ,0)
+// Then you format to add the function motions to the function
+//     const bobsTotal = purchases.reduce((acc, element) => {
+
+//     },0)
+// That's how the ,0 ends up at the end of the code. For reference.
